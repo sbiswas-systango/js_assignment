@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #first
+        {
+            /* border-radius: 100%; */
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            float: left;
+            margin: 5px;
+        }
+
+        #second
+        {
+            /* border-radius: 100%; */
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            float: left;
+            margin: 5px;
+        }
+
+        button{
+             background-color: bisque;
+             color:black;
+
+
+        }
+    </style>
+</head>
+<body>
+    <button id="color">Click Here To Change Text And Color</button>
+    <br />
+
+    <div id="first" style="background-color: red;">This is Red Box</div>
+    <div id="second" style="background-color: yellow;">This is Yellow Box</div>
+
+    <script type="text/javascript">
+        document.getElementById('color').onclick = function () {
+            var divColor = document.getElementById('first').style.backgroundColor;
+            document.getElementById('first').style.backgroundColor = document.getElementById('second').style.backgroundColor.toString();
+
+            document.getElementById('second').style.backgroundColor = divColor.toString();
+
+
+
+            // interchange div text
+            var strDiv1Content = document.getElementById('first').innerHTML;
+            var strDiv2Content = document.getElementById('second').innerHTML;
+
+            document.getElementById('first').innerHTML = strDiv2Content;
+            document.getElementById('second').innerHTML = strDiv1Content;
+
+        }
+    </script>
+</body>
+</html>

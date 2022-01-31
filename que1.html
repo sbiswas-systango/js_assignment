@@ -1,0 +1,49 @@
+<html>
+    <head>
+          <title>Date-Time</title>
+          <p id ="date1"></p>
+          <p id ="date2"></p>
+          <p id ="date3"></p>
+          <p id ="date4"></p>
+    </head>
+    <body>
+        <script>
+                var today = new Date();
+                var dd = today.getDate();
+
+                var mm = today.getMonth()+1; 
+                var yyyy = today.getFullYear();
+                if(dd<10) 
+                {
+                  dd='0'+dd;
+                 } 
+
+                if(mm<10) 
+                {
+                    mm='0'+mm;
+                 } 
+                 function formatAMPM(date) {
+                var hours = date.getHours();
+                var minutes = date.getMinutes();
+                var ampm = hours >= 12 ? 'pm' : 'am';
+                hours = hours % 12;
+                 hours = hours ? hours : 12; // the hour '0' should be '12'
+                minutes = minutes < 10 ? '0'+minutes : minutes;
+                var strTime = hours + ':' + minutes + ' ' + ampm;
+                return strTime;
+                }
+                var date1 =today.toDateString() + ', '+ formatAMPM(today);
+                document.getElementById("date1").innerHTML=date1;
+                
+                const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                 let day = weekday[today.getDay()];
+                var date2=  formatAMPM(today) +', '+day + ', '+today.toDateString();
+                document.getElementById("date2").innerHTML=date2;
+
+                var date4 = dd+'/'+mm+'/'+yyyy +', ' + formatAMPM(today);
+                document.getElementById("date4").innerHTML=date4;
+
+    </script>
+    
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Assignment - question 15</title>
+  </head>
+  <body>
+
+  	<body>
+		<div class="glassmorph roundedBorder d-flex justify-content-center align-item-center" id="grandParent">
+			<div class="">
+				<p class="heading"> Add salary </p>
+				<input type="text" class="customeInput col-12 col-md-8 p-2" id="inp" />
+				<br>
+				<br>
+				<div class="row">
+					<button class="btn btn-success mx-auto my-4 col-6" onclick="AddElement()"> <span id="resultBtn">add salary</span> </button>
+					<button class="btn btn-success mx-auto my-4 col-4" onclick="SumAll()"> <span id="resultBtn">sum</span> </button>
+				</div>
+				<br>
+				<ul id="salaryList"></ul>
+				<p id="result"></p>
+
+			</div>
+		</div>
+	</body>
+
+    <script>
+        let inp = document.getElementById("inp");
+let result = document.getElementById("result");
+let tracer = 0;
+let summ = 0;
+let salaries = {};
+
+
+function AddElement(){
+	let salaryList = document.getElementById("salaryList");
+	// alert(salaryList);
+
+	salaryList.innerHTML = salaryList.innerHTML+`<li>${inp.value}</li>`;
+	salaries["v"+tracer.toString()] = parseInt(inp.value);	
+	tracer++;
+
+	console.log(salaries);
+}
+
+
+function SumAll(){
+	summ = 0;
+	for (let value in salaries) {
+        summ = summ + salaries[value]; 
+    }
+
+	result.innerText = "Total sum - "+summ;
+
+}
+    </script>
+
+
+  </body>
+</html>

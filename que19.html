@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p id="text-para" onmouseover="changeColor()">
+        A one minute typing test is like a sprint. If you make a mistake it is probably best to just 
+        ignore it and keep typing the paragraphs. Of course accuracy is important, but your speed 
+        and accuracy will get better as long as you treat this as a learning exercise.Come back a 
+        few days in a row and you will start to see progress.
+    </p>
+    <script>
+        
+        let colors = ['red', 'green', 'yellow', 'blue', 'orange'];
+        var style = document.createElement('style');
+        document.getElementsByTagName('head')[0].appendChild(style);
+
+        function changeColor() {
+            let index = Math.floor(Math.random() * 5);
+            let paraColor = colors[index];
+            let css = 'p:hover{color:' + paraColor + '}';
+
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+        }
+    </script>
+</body>
+
+</html>

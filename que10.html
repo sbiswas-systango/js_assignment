@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Assignment - question 10</title>
+  </head>
+  <body>
+    
+  	<body>
+		<div class="glassmorph roundedBorder d-flex justify-content-center align-item-center" id="grandParent">
+			<div class="">
+				<p class="heading"> Enter the row count- </p>
+				<input type="number" class="customeInput col-12 col-md-8 p-2" id="inp" />
+				<br>
+				<button class="btn btn-success mx-auto my-4 col-6" onclick="check()"> <span id="resultBtn">draw prymid</span></button>
+				<br>
+				<pre id="result"></pre>
+
+			</div>
+		</div>
+	</body>
+   
+    <script>
+        let inp = document.getElementById("inp");
+let result = document.getElementById("result");
+
+
+function check(){
+	let rows = parseInt(inp.value);
+	result.innerHTML = "";
+	
+	let i = 0;
+	while(i<rows)
+	{
+		currentLine = "";
+
+		let spaces = 0;
+		while(spaces < rows-i-1){
+			currentLine=currentLine+" ";
+			spaces++;
+		}
+
+		let stars = 0;
+		while(stars < (2*i)+1){
+			currentLine=currentLine+"*";
+			stars++;
+		}
+
+		result.innerHTML = result.innerHTML+"<br>"+currentLine;
+		console.log(currentLine);
+
+		i++;
+	}
+	
+}
+    </script>
+
+  </body>
+</html>

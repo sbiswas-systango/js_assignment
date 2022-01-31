@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="utf-8">
+ <title>JS Bin</title>
+</head>
+<body>
+    <div>
+        <button>Get</button>
+        <h1>result</h1>
+    </div>
+   
+<script>
+let btnGet=document.querySelector("button");
+let result=document.querySelector("h1");
+var num=Number(prompt("enter number="));
+var fix=Number(prompt("enter fix number="));
+// alert(num);
+btnGet.addEventListener('click',() => {
+    result.innerText = num.toFixed(fix);
+});
+
+
+
+</script>
+    
+
+</body>
+</html>
